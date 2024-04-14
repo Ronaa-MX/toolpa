@@ -9,10 +9,11 @@ export default function CameraScreen() {
             <Video
                 style={styles.video}
                 source={
-                    require('../assets/teoti2.mp4')
+                    require('../assets/teoti3.mp4')
                 }
                 shouldPlay
                 isLooping={true}
+                resizeMode='stretch'
             />
 
         </View>
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ecf0f1',
     },
     video: {
-        width: 620,
+        width: 920,
         height: 750,
     },
     buttons: {
