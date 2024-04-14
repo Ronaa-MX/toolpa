@@ -3,10 +3,12 @@ import {
   ViroARSceneNavigator,
   ViroText,
   ViroTrackingStateConstants,
+  Viro3DObject,
+  ViroAmbientLight
 } from "@viro-community/react-viro";
 import React, { useState } from "react";
 import { StyleSheet } from "react-native";
-
+import { Piramide } from "./Piramide";
 const HelloWorldSceneAR = () => {
   const [text, setText] = useState("Initializing AR...");
 
@@ -21,12 +23,8 @@ const HelloWorldSceneAR = () => {
 
   return (
     <ViroARScene onTrackingUpdated={onInitialized}>
-      <ViroText
-        text={text}
-        scale={[0.5, 0.5, 0.5]}
-        position={[0, 0, -1]}
-        style={styles.helloWorldTextStyle}
-      />
+      
+  <Piramide/>
     </ViroARScene>
   );
 };
