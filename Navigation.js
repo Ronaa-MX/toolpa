@@ -76,6 +76,9 @@ function MyTabs() {
         <Tab.Navigator
             initialRouteName="Home"
             screenOptions={{ headerShown: false }}
+            barStyle={{ backgroundColor: '#41B06E' }}
+            inactiveColor="#141E46"
+            activeColor="#FFF5E0"
 
         >
             <Tab.Screen
@@ -83,21 +86,22 @@ function MyTabs() {
                 component={HomeStack}
                 options={{
                     tabBarLabel: 'Home',
-                    tabBarIcon: ({ size, color }) => (<Feather name="home" size={24} color="black" />),
+                    tabBarIcon: ({ size, color }) => (<Feather name="home" size={24} color="#141E46" />),
+
                 }} />
             <Tab.Screen
                 name="Setting"
                 component={SearchScreen}
                 options={{
                     tabBarLabel: 'Search',
-                    tabBarIcon: ({ size, color }) => (<Feather name="search" size={24} color="black" />),
+                    tabBarIcon: ({ size, color }) => (<Feather name="search" size={24} color="#141E46" />),
                 }} />
             <Tab.Screen
                 name="Profile"
                 component={ProfileScreen}
                 options={{
                     tabBarLabel: 'Profile',
-                    tabBarIcon: ({ size, color }) => (<Feather name="user" size={24} color="black" />),
+                    tabBarIcon: ({ size, color }) => (<Feather name="user" size={24} color="#141E46" />),
                 }} />
 
         </Tab.Navigator>

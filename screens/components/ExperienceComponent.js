@@ -18,18 +18,21 @@ const styles = {
         padding: 2,
         marginBottom: 20,
         marginEnd: 20,
+        color: "#73C2FB"
     },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginTop: 10,
+        marginTop: 5,
+        color: "#41B06E"
     },
     description: {
         fontSize: 16,
-        marginTop: 5,
+        marginTop: 2,
+        color: "#141E46"
     },
     preview: {
-        width: 100,
+        width: 150,
         height: 100,
         borderRadius: 10,
     },
