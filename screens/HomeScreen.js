@@ -2,17 +2,10 @@ import React from "react";
 import { View, Text, Button, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from '@expo/vector-icons';
+import ExperienceComponent from './components/ExperienceComponent';
 
 
-const ExperiencesComponent = ({ preview, title, description }) => {
-    return (
-        <View style={styles.container}>
-            <Image source={preview} style={styles.preview} />
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.description}>{description}</Text>
-        </View>
-    );
-};
+
 
 const HomeScreen = () => {
 
@@ -63,7 +56,7 @@ const HomeScreen = () => {
                 <Text style={{ marginStart: 15, fontSize: 20 }}>Suggestions</Text>
                 <View style={{ margin: 20, flexDirection: "row", alignItems: "center", marginBottom: 40, flexWrap: "wrap" }}>
                     <TouchableOpacity onPress={() => navigation.navigate('CameraScreen')}>
-                        <ExperiencesComponent
+                        <ExperienceComponent
                             preview={require("../assets/previewTest.png")}
                             title="Monas chinas"
                             description="anime catgirls" />
@@ -76,28 +69,5 @@ const HomeScreen = () => {
     );
 }
 
-const styles = {
-    container: {
-        justifyContent: "flex .space-around",
-        alignItems: "center",
-        padding: 2,
-        marginBottom: 20,
-        marginEnd: 20,
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginTop: 10,
-    },
-    description: {
-        fontSize: 16,
-        marginTop: 5,
-    },
-    preview: {
-        width: 100,
-        height: 100,
-        borderRadius: 10,
-    },
-};
 
 export default HomeScreen;
