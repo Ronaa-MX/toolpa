@@ -38,13 +38,11 @@ const LoginScreen = () => {
                 <TextInput style={{ fontSize: 20, margin: 10, borderColor: 'black', borderWidth: 1, borderRadius: 5, textAlign: 'center' }}
                     placeholder="Email"
                     autoCapitalize="none"
-                    onChangeText={(text) => setEmail(text)}
                 />
                 <Text style={{ fontSize: 16 }}> Password </Text>
                 <TextInput style={{ fontSize: 20, margin: 10, borderColor: 'black', borderWidth: 1, borderRadius: 5, textAlign: 'center' }}
                     placeholder="Password"
                     secureTextEntry={true}
-                    onChangeText={(text) => setPassword(text)}
                 />
                 <View>
                     <Text onPress={() => navigation.navigate('ForgotPassword')} style={{ fontSize: 12, marginTop: 1, margin: 10, textAlign: 'right', color: "blue", }}>Forgot password? </Text>
