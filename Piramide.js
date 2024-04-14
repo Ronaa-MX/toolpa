@@ -15,8 +15,8 @@ export const Piramide = () => {
   <Viro3DObject
 	source={require('./assets/mexican_pyramid_-_mesoamerican_culture.glb')}
    
-	type="GLB"
-	position={[0.0, -2.0, -1]}
+	type="vrx"
+	position={[0.0, -0.5, -1]}
 	scale={[0.001, 0.001, 0.001]}
   />
 </>
