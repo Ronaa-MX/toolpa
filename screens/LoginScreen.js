@@ -10,9 +10,8 @@ import {
     ActivityIndicator,
     Button,
     KeyboardAvoidingView,
+    TouchableOpacity
 } from "react-native";
-
-
 
 const LoginScreen = () => {
 
@@ -48,9 +47,26 @@ const LoginScreen = () => {
                     onChangeText={(text) => setPassword(text)}
                 />
                 <View>
-                    <Text onPress={() => Linking.openURL('http://google.com')} style={{ fontSize: 12, marginTop: 1, margin: 10, textAlign: 'center', color: "blue", }}>Forgot password? </Text>
+                    <Text onPress={() => navigation.navigate('ForgotPassword')} style={{ fontSize: 12, marginTop: 1, margin: 10, textAlign: 'right', color: "blue", }}>Forgot password? </Text>
                 </View>
+                <TouchableOpacity style={
+                    {
+                        backgroundColor: 'blue',
+                        padding: 10,
+                        borderRadius: 6,
+                        alignItems: 'center',
+                        alignContent: 'center',
+                        alignSelf: 'center',
+                        margin: 10,
+                        width: 100
+                    }
+                } onPress={() => navigation.navigate('HomeScreen')}>
+                    <Text style={{ fontSize: 16, marginTop: 1, textAlign: 'center', color: "white", }} >Log in</Text>
+                </TouchableOpacity>
 
+            </View>
+            <View>
+                <Text onPress={() => navigation.navigate('SignUp')} style={{ fontSize: 16, marginTop: 1, margin: 10, textAlign: 'center', color: "blue", }}>Sign Up </Text>
             </View>
         </View >
     );

@@ -12,29 +12,36 @@ import ProfileScreen from "./screens/ProfileScreen";
 import LoginScreen from "./screens/LoginScreen";
 import SignUpScreen from "./screens/SignUpScreen";
 import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
+import CameraScreen from "./screens/CameraScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
 const LoginStackNavigator = createStackNavigator();
+const HomeStackNavigator = createStackNavigator();
 
-function MyStack() {
+function LoginStack() {
     return (
         <LoginStackNavigator.Navigator
             initialRouteName="LoginScreen"
-            screenOptions={{ headerShown: false }}>
+            screenOptions={{ headerShown: false }}
+        >
             <LoginStackNavigator.Screen
                 name="HomeScreen"
-                component={HomeScreen}
-                options={{ headerTitle: false }} />
+                component={MyTabs}
+                screenOptions={{ headerShown: false }}
+            />
 
             <LoginStackNavigator.Screen
                 name="LoginScreen"
                 component={LoginScreen}
-                options={{ headerTitle: false }} />
+                screenOptions={{ headerShown: false }}
+            />
             <LoginStackNavigator.Screen
                 name="SignUp"
                 component={SignUpScreen}
-                options={{ headerBackTitleVisible: false }} />
+                screenOptions={{ headerShown: true }}
+                options={{ headerBackTitleVisible: false }}
+            />
             <LoginStackNavigator.Screen
                 name="ForgotPassword"
                 component={ForgotPasswordScreen}
@@ -43,17 +50,37 @@ function MyStack() {
     );
 }
 
+function HomeStack() {
+    return (
+        <HomeStackNavigator.Navigator
+            initialRouteName="HomeScreen"
+            screenOptions={{ headerShown: false }}>
+            <HomeStackNavigator.Screen
+                name="HomeScreen"
+                component={HomeScreen}
+            />
+            <HomeStackNavigator.Screen
+                name="ProfileScreen"
+                component={ProfileScreen}
+            />
+            <HomeStackNavigator.Screen
+                name="CameraScreen"
+                component={CameraScreen}
+            />
+        </HomeStackNavigator.Navigator>
+    );
+}
+
 function MyTabs() {
     return (
         <Tab.Navigator
             initialRouteName="Home"
-            screenOptions={{
-                tabBarColor: '#009387',
-            }}
+            screenOptions={{ headerShown: false }}
+
         >
             <Tab.Screen
                 name="Home"
-                component={HomeScreen}
+                component={HomeStack}
                 options={{
                     tabBarLabel: 'Home',
                     tabBarIcon: ({ size, color }) => (<Feather name="home" size={24} color="black" />),
@@ -72,6 +99,7 @@ function MyTabs() {
                     tabBarLabel: 'Profile',
                     tabBarIcon: ({ size, color }) => (<Feather name="user" size={24} color="black" />),
                 }} />
+
         </Tab.Navigator>
     );
 }
@@ -79,7 +107,7 @@ function MyTabs() {
 export default function Navigation() {
     return (
         <NavigationContainer>
-            <MyStack />
+            <LoginStack />
         </NavigationContainer>
     );
 }

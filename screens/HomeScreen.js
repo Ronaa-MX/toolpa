@@ -1,25 +1,103 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, Button, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Feather } from '@expo/vector-icons';
 
+
+const ExperiencesComponent = ({ preview, title, description }) => {
+    return (
+        <View style={styles.container}>
+            <Image source={preview} style={styles.preview} />
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.description}>{description}</Text>
+        </View>
+    );
+};
 
 const HomeScreen = () => {
 
     const navigation = useNavigation();
 
     return (
-        <View>
+        <View >
+            <View style={{ margin: 10, justifyContent: "left", alignContent: "center", alignItems: "center", flexDirection: "row" }}>
+                <TouchableOpacity
+                    style={{
+                        position: "relative",
+                        marginTop: "10%",
+                        backgroundColor: "white",
+                        padding: 10,
+                        borderRadius: 50,
+                        shadowColor: "#000",
+                        shadowOffset: { width: 0, height: 2 },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 3.84,
+                    }}
+                    onPress={() => navigation.navigate('ProfileScreen')}
+                >
+                    <Feather name="user" size={24} color="black" />
+                </TouchableOpacity>
+                <Text style={{
+                    position: "relative",
+                    fontSize: 16,
+                    textAlign: 'center',
+                    alignContent: "center",
+                    alignItems: "center",
+                    alignSelf: "center",
+                    marginTop: "10%",
+                    marginLeft: "5%"
+
+                }}>userName</Text>
+            </View>
             <Text style={{
                 fontSize: 30,
                 textAlign: 'center',
-                marginTop: "20%"
+                marginTop: "10%",
+                marginBottom: "15%",
+                margin: "5%"
 
-            }}>Home Screen</Text>
+
+            }}>Where do you want to travel today?</Text>
+
+            <View style={{ padding: 10, justifyContent: "center", alignContent: "center", alignItems: "flex-start" }}>
+                <Text style={{ marginStart: 15, fontSize: 20 }}>Suggestions</Text>
+                <View style={{ margin: 20, flexDirection: "row", alignItems: "center", marginBottom: 40, flexWrap: "wrap" }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('CameraScreen')}>
+                        <ExperiencesComponent
+                            preview={require("../assets/previewTest.png")}
+                            title="Monas chinas"
+                            description="anime catgirls" />
+                    </TouchableOpacity>
+                </View>
+            </View>
 
 
-
-        </View>
+        </View >
     );
 }
+
+const styles = {
+    container: {
+        justifyContent: "flex .space-around",
+        alignItems: "center",
+        padding: 2,
+        marginBottom: 20,
+        marginEnd: 20,
+    },
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginTop: 10,
+    },
+    description: {
+        fontSize: 16,
+        marginTop: 5,
+    },
+    preview: {
+        width: 100,
+        height: 100,
+        borderRadius: 10,
+    },
+};
 
 export default HomeScreen;
