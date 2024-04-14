@@ -3,6 +3,7 @@ import { View, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import ExperienceComponent from './components/ExperienceComponent';
 
+import { Feather } from '@expo/vector-icons';
 const ProfileScreen = () => {
 
     const navigation = useNavigation();
@@ -14,13 +15,13 @@ const ProfileScreen = () => {
                 textAlign: 'center',
                 marginTop: "20%"
 
-            }}>Profile Screen</Text>
-            <ExperienceComponent
-                preview={require("../assets/previewTest.png")}
-                title="test"
-                description="description" />
+            }}>Profile</Text>
+            <View>
+                <Feather name="user" size={52} color="#141E46" style={{ alignSelf: 'center', marginTop: 20 }} />
+            </View>
 
-        </View>
+
+        </View >
     );
 }
 

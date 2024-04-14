@@ -1,12 +1,19 @@
-import React from 'react';
-import { View, Image, Text } from 'react-native';
+import React, { useState } from 'react';
+import { View, Image, Text, TouchableOpacity } from 'react-native';
 
 const ExperienceComponent = ({ preview, title, description }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+
     return (
         <View style={styles.container}>
             <Image source={preview} style={styles.preview} />
             <Text style={styles.title}>{title}</Text>
-            <Text style={styles.description}>{description}</Text>
+            <TouchableOpacity onPress={() => setIsExpanded(!isExpanded)}>
+                <Text style={styles.description}>
+                    {isExpanded ? description : `${description.substring(0, 50)}...`}
+                </Text>
+            </TouchableOpacity>
         </View>
     );
 };

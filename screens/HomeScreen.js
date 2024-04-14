@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
+import { View, Text, Button, StyleSheet, TouchableOpacity, Image, ScrollView, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from '@expo/vector-icons';
 import ExperienceComponent from './components/ExperienceComponent';
@@ -58,39 +58,34 @@ const HomeScreen = () => {
                 <View style={{ margin: 5, flexDirection: "row", alignItems: "center", marginBottom: 40, flexWrap: "wrap" }}>
                     <TouchableOpacity onPress={() => navigation.navigate('CameraScreen')}>
                         <ExperienceComponent
-                            preview={require("../assets/previewTest.png")}
-                            title="Monas chinas"
-                            description="anime catgirls" />
+                            preview={require("../assets/previewtest.jpg")}
+                            title="Templo Mayor"
+                            description="El Templo Mayor o Gran Templo de México es un recinto que comprende una serie de construcciones, edificios, torres y un patio, el espacio físico donde se ubicaban las mismas, cercado por una pared que contaba con unas puertas que daban acceso a las calzadas principales de la ciudad.​" />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('CameraScreen')}>
+                        <ExperienceComponent
+                            preview={require("../assets/bocana.jpg")}
+                            title="Bocana del rio"
+                            description="Bocana del rio" />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('CameraScreen')}>
                         <ExperienceComponent
-                            preview={require("../assets/image-icon.png")}
-                            title="Title"
-                            description="Description" />
+                            preview={require("../assets/huijazoo.jpg")}
+                            title="Huijazoo"
+                            description="Huijazoo" />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('CameraScreen')}>
                         <ExperienceComponent
-                            preview={require("../assets/image-icon.png")}
-                            title="Title"
-                            description="Description" />
+                            preview={require("../assets/itza.jpg")}
+                            title="Chichen Itza"
+                            description="Chichen Itza" />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('CameraScreen')}>
                         <ExperienceComponent
-                            preview={require("../assets/image-icon.png")}
-                            title="Title"
-                            description="Description" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('CameraScreen')}>
-                        <ExperienceComponent
-                            preview={require("../assets/image-icon.png")}
-                            title="Title"
-                            description="Description" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('CameraScreen')}>
-                        <ExperienceComponent
-                            preview={require("../assets/image-icon.png")}
-                            title="Title"
-                            description="Description" />
+                            preview={require("../assets/tulum.jpg")}
+                            title="Tulum"
+                            description="Tulum" />
                     </TouchableOpacity>
                 </View>
             </View>
