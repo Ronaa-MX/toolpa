@@ -11,7 +11,7 @@ babelTransformerPath: require.resolve("react-native-svg-transformer"),
 
 config.resolver = {
     ...resolver,
-    assetExts: [...resolver.assetExts, "mtl", "obj", "png", "gltf","jpeg", "bin", "glb"],
+    assetExts: [...resolver.assetExts, "mtl", "obj", "png", "gltf","jpeg", "bin", "glb", "vrx"],
     sourceExts: [...resolver.sourceExts, "svg", "png"],
   };
 
