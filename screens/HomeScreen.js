@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+
 const HomeScreen = () => {
 
     const navigation = useNavigation();
@@ -14,6 +15,8 @@ const HomeScreen = () => {
                 marginTop: "20%"
 
             }}>Home Screen</Text>
+
+
 
         </View>
     );

@@ -9,9 +9,39 @@ import { Feather } from '@expo/vector-icons';
 import HomeScreen from "./screens/HomeScreen";
 import SearchScreen from "./screens/SearchScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import LoginScreen from "./screens/LoginScreen";
+import SignUpScreen from "./screens/SignUpScreen";
+import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
+const LoginStackNavigator = createStackNavigator();
+
+function MyStack() {
+    return (
+        <LoginStackNavigator.Navigator
+            initialRouteName="LoginScreen"
+            screenOptions={{ headerShown: false }}>
+            <LoginStackNavigator.Screen
+                name="HomeScreen"
+                component={HomeScreen}
+                options={{ headerTitle: false }} />
+
+            <LoginStackNavigator.Screen
+                name="LoginScreen"
+                component={LoginScreen}
+                options={{ headerTitle: false }} />
+            <LoginStackNavigator.Screen
+                name="SignUp"
+                component={SignUpScreen}
+                options={{ headerBackTitleVisible: false }} />
+            <LoginStackNavigator.Screen
+                name="ForgotPassword"
+                component={ForgotPasswordScreen}
+                options={{ headerBackTitleVisible: false }} />
+        </LoginStackNavigator.Navigator>
+    );
+}
 
 function MyTabs() {
     return (
@@ -27,15 +57,13 @@ function MyTabs() {
                 options={{
                     tabBarLabel: 'Home',
                     tabBarIcon: ({ size, color }) => (<Feather name="home" size={24} color="black" />),
-                    tabBarBadge: 3
                 }} />
             <Tab.Screen
                 name="Setting"
                 component={SearchScreen}
                 options={{
-                    tabBarLabel: 'Setting',
-                    tabBarIcon: ({ size, color }) => (<Feather name="settings" size={24} color="black" />),
-                    tabBarBadge: 20
+                    tabBarLabel: 'Search',
+                    tabBarIcon: ({ size, color }) => (<Feather name="search" size={24} color="black" />),
                 }} />
             <Tab.Screen
                 name="Profile"
@@ -43,7 +71,6 @@ function MyTabs() {
                 options={{
                     tabBarLabel: 'Profile',
                     tabBarIcon: ({ size, color }) => (<Feather name="user" size={24} color="black" />),
-                    tabBarBadge: 1
                 }} />
         </Tab.Navigator>
     );
@@ -52,7 +79,7 @@ function MyTabs() {
 export default function Navigation() {
     return (
         <NavigationContainer>
-            <MyTabs />
+            <MyStack />
         </NavigationContainer>
     );
 }
